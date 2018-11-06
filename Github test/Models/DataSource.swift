@@ -33,7 +33,7 @@ class UserDataSource {
 		}
 		
 		let secondSection = [
-			CellContent(text: "Repositories", icon: nil, detailText: "\(user.publicRepos)"),
+			CellContent(text: "Repositories", icon: nil, detailText: "\(user.publicRepos ?? 0)"),
 			CellContent(text: "Start", icon: nil, detailText: nil),
 			CellContent(text: "Foolowers", icon: nil, detailText: nil),
 			CellContent(text: "Following", icon: nil, detailText: nil)
@@ -54,8 +54,8 @@ class UserDataSource {
 			result.append(CellContent(text: email, icon: #imageLiteral(resourceName: "mail"), detailText: nil))
 		}
 		
-		if let blod = user.blog {
-			result.append(CellContent(text: blod, icon: #imageLiteral(resourceName: "browser"), detailText: nil))
+		if let blog = user.blog {
+			result.append(CellContent(text: blog, icon: #imageLiteral(resourceName: "browser"), detailText: nil))
 		}
 		
 		if let company = user.company {

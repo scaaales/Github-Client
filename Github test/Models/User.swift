@@ -7,14 +7,14 @@
 //
 
 struct User: Codable {
-	var name: String
-	let login: String
+	var name: String?
+	let login: String?
 	var bio: String?
-	let avatarUrl: String
+	let avatarUrl: String?
 	let email: String?
 	var location: String?
 	var company: String?
-	let publicRepos: Int
+	let publicRepos: Int?
 	var blog: String?
 	
 	enum CodingKeys: String, CodingKey {

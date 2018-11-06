@@ -169,7 +169,7 @@ private extension EditProfileViewController {
 	}
 	
 	private func fillCells() {
-		let name = (name: "Name", (text: user.name, placeholder: "Name or nickname"))
+		let name = (name: "Name", (text: user.name ?? "", placeholder: "Name or nickname"))
 		let blog = (name: "Blog", value:(text: user.blog ?? "", placeholder: "example.com"))
 		let company = (name: "Company", value:(text: user.company ?? "", placeholder: "Company name"))
 		let location = (name: "Location", value:(text: user.location ?? "", placeholder: "City"))

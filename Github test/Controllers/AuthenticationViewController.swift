@@ -67,7 +67,7 @@ class AuthenticationViewController: UIViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard let token = sender as? String,
-			let profileVC = segue.destination as? ProfileViewController else { fatalError() }
+			let profileVC = segue.destination as? ProfileViewController else { return }
 		profileVC.token = token
 	}
 	

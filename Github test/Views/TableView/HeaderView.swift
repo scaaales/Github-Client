@@ -18,12 +18,12 @@ class HeaderView: UITableViewCell {
 	@IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 	
 	func setup(avatarImageURLString: String?,
-					 name: String,
-					 nickname: String,
+					 name: String?,
+					 nickname: String?,
 					 bio: String?) {
 		setImage(from: avatarImageURLString)
-		nameLabel.text = name
-		nicknameLabel.text = nickname
+		nameLabel.text = name ?? "No name"
+		nicknameLabel.text = nickname ?? "No nickname"
 		bioLabel.text = bio ?? "No bio"
 	}
 	

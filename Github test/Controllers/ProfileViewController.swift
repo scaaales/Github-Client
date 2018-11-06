@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
 	@IBOutlet private weak var tabBar: UITabBar!
 	@IBOutlet private weak var blurredView: UIView!
 	@IBOutlet private weak var profileLoadingIndicator: UIActivityIndicatorView!
+	@IBOutlet private weak var editButton: UIBarButtonItem!
+	@IBOutlet private weak var logoutButton: UIBarButtonItem!
 	
 	var user: User? {
 		didSet {
@@ -178,12 +180,21 @@ private extension ProfileViewController {
 		blurredView.isHidden = false
 		profileLoadingIndicator.startAnimating()
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
+		tabBar.items?.forEach({ $0.isEnabled = false })
+		setUserInteraction(enabled: false)
 	}
 	
 	func stopAnimatingIndicators() {
 		blurredView.isHidden = true
 		profileLoadingIndicator.stopAnimating()
 		UIApplication.shared.isNetworkActivityIndicatorVisible = false
+		setUserInteraction(enabled: true)
 	}
 
+	func setUserInteraction(enabled: Bool) {
+		tabBar.items?.forEach({ $0.isEnabled = enabled })
+		editButton.isEnabled = enabled
+		logoutButton.isEnabled = enabled
+	}
+	
 }
