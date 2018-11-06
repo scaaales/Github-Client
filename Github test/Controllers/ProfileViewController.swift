@@ -61,6 +61,9 @@ class ProfileViewController: UIViewController {
 		startAnimatingIndicators()
 		
 		githubAPIService.getUser { [weak self] user, error in
+            
+            // error valueNotFound --> Issue #1
+            
 			if let error = error as? HTTPClient.NetworkError {
 				if error == .badStatusCode {
 					(self?.navigationController as? NavigationController)?.showAuth()

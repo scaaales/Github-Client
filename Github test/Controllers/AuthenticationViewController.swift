@@ -66,6 +66,9 @@ class AuthenticationViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        // MARK: - Remark. I'm not sure about 'fatalError'. Maybe there is can be better way than fatalError
 		guard let token = sender as? String,
 			let profileVC = segue.destination as? ProfileViewController else { fatalError() }
 		profileVC.token = token

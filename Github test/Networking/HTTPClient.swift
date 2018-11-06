@@ -46,6 +46,9 @@ class HTTPClient {
 					 queryItems: [URLQueryItem]?,
 					 headers: [String: String]?,
 					 completionHandler: @escaping CompletionHandler) {
+        
+        
+        
 		var urlComponnents = URLComponents(url: baseURL, resolvingAgainstBaseURL: false)
 		urlComponnents?.path = path
 		urlComponnents?.queryItems = queryItems
